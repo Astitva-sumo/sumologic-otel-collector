@@ -1,12 +1,14 @@
 module github.com/SumoLogic/sumologic-otel-collector/pkg/tools/otelcol-config
 
-go 1.21
+go 1.23.0
+
+toolchain go1.24.3
 
 require (
 	github.com/google/go-cmp v0.6.0
 	github.com/mikefarah/yq/v4 v4.44.2
 	github.com/spf13/pflag v1.0.5
-	golang.org/x/exp v0.0.0-20240613232115-7f521ea00fb8
+	golang.org/x/exp v0.0.0-20250711185948-6ae5c78190dc
 	gopkg.in/op/go-logging.v1 v1.0.0-20160211212156-b2cb9fa56473
 	gopkg.in/yaml.v3 v3.0.1
 	howett.net/plist v1.0.1
