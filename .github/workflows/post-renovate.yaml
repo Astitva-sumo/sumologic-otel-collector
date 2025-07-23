@@ -34,8 +34,8 @@ jobs:
 
       - name: Run document update script
         run: |
-          chmod +x ./github/renovate.sh
-          ./github/renovate.sh
+          chmod +x .github/renovate.sh
+          .github/renovate.sh
 
       - name: Commit and push document changes
         run: |
