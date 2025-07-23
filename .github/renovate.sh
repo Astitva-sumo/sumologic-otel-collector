@@ -33,7 +33,7 @@ if [[ -n "$MSG_ARG" ]]; then
 else
     msg="$(git log -1 --pretty=%B)"
 fi
-
+echo "$msg"
 FROM_VER="$(echo "$msg" | sed -n 's/.*Updated from v\([0-9.]*\) to v[0-9.]*.*/\1/p')"
 TO_VER="$(echo "$msg" | sed -n 's/.*Updated from v[0-9.]* to v\([0-9.]*\).*/\1/p')"
 
