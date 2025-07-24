@@ -12,10 +12,6 @@ on:
         description: 'Branch to update'
         required: true
         default: 'main'
-      msg:
-        description: 'Custom message to pass to the script'
-        required: true
-        default: 'docs: update docs after dependency upgrade'
 
 permissions:
   contents: write
@@ -39,7 +35,7 @@ jobs:
       - name: Run document update script
         run: |
           chmod +x .github/renovate.sh
-          .github/renovate.sh --msg="${{ github.event.inputs.msg }}"
+          .github/renovate.sh
 
       - name: Commit and push document changes
         run: |
