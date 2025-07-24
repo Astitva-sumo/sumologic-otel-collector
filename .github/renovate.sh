@@ -57,13 +57,13 @@ yq -i '(.. | select(tag=="!!str")) |= sub("(go\.opentelemetry\.io/collector.*) v
 yq -i '(.. | select(tag=="!!str")) |= sub("(github\.com/open-telemetry/opentelemetry-collector-contrib.*) v'"${FROM_VER}"'", "$1 v'"${TO_VER}"'")' otelcolbuilder/.otelcol-builder.yaml
 
 # Update version references in otelcol-builder Makefile and all other md files
-gsed -i "s/${FROM_VER}/${TO_VER}/" otelcolbuilder/Makefile
-gsed -i "s/\(collector\/\(blob\|tree\)\/v\)${FROM_VER}/\1${TO_VER}/" \
+sed -i "s/${FROM_VER}/${TO_VER}/" otelcolbuilder/Makefile
+sed -i "s/\(collector\/\(blob\|tree\)\/v\)${FROM_VER}/\1${TO_VER}/" \
     README.md \
     docs/configuration.md \
     docs/migration.md \
     docs/performance.md
-gsed -i "s/\(contrib\/\(blob\|tree\)\/v\)${FROM_VER}/\1${TO_VER}/" \
+sed -i "s/\(contrib\/\(blob\|tree\)\/v\)${FROM_VER}/\1${TO_VER}/" \
     README.md \
     docs/configuration.md \
     docs/migration.md \
