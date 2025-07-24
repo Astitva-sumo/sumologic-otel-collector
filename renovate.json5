@@ -13,8 +13,11 @@
         "^github.com/open-telemetry/opentelemetry-collector-contrib.*"
       ],
       "groupName": "opentelemetry-collector",
-      "branchName": "renovate/consolidated",
-      "commitMessage": "chore(deps): updated otel from {{currVersion}} to {{newVersion}}"
+      "commitMessage": {
+        "prefix": "deps(otel)",
+        "includeScope": false,
+        "subject": "Updated {{groupName}} from {{currVersion}} to {{newVersion}}"
+      }
     }
   ]
 }

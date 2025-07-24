@@ -34,8 +34,8 @@ else
     msg="$(git log -1 --pretty=%B)"
 fi
 echo "$msg"
-FROM_VER="$(echo "$msg" | sed -n 's/.*Updated from v\([0-9.]*\) to v[0-9.]*.*/\1/p')"
-TO_VER="$(echo "$msg" | sed -n 's/.*Updated from v[0-9.]* to v\([0-9.]*\).*/\1/p')"
+FROM_VER="$(echo "$msg" | sed -n 's/.*Updated opentelemetry-collector from v\([0-9.]*\) to v[0-9.]*.*/\1/p')"
+TO_VER="$(echo "$msg" | sed -n 's/.*Updated opentelemetry-collector from v[0-9.]* to v\([0-9.]*\).*/\1/p')"
 
 if [[ -z "$FROM_VER" || -z "$TO_VER" ]]; then
     echo "ERROR: Commit message not in expected format: 'Updated from va.b.c to vx.y.z'"
