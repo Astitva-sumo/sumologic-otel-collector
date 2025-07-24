@@ -12,7 +12,9 @@
         "^go.opentelemetry.io/collector.*",
         "^github.com/open-telemetry/opentelemetry-collector-contrib.*"
       ],
-      "groupName": "opentelemetry-collector"
+      "groupName": "opentelemetry-collector",
+      "branchName": "renovate/consolidated",
+      "commitMessage": "chore(deps): updated otel from {{currVersion}} to {{newVersion}}"
     }
   ]
 }
