@@ -13,11 +13,7 @@
         "^github.com/open-telemetry/opentelemetry-collector-contrib.*"
       ],
       "groupName": "opentelemetry-collector",
-      "commitMessage": {
-        "prefix": "deps(otel)",
-        "includeScope": false,
-        "subject": "Updated {{groupName}} from {{currVersion}} to {{newVersion}}"
-      }
+      "commitMessage": "deps(otel): Updated {{groupName}} from v{{currVersion}} to v{{newVersion}}"
     }
   ]
 }
