@@ -56,4 +56,3 @@ for FROM_VER in $FROM_VERSIONS; do
         docs/performance.md \
         pkg/receiver/telegrafreceiver/README.md
 done
-
