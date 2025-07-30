@@ -20,10 +20,7 @@ while [[ $# -gt 0 ]]; do
             ;;
     esac
 done
-TO_VERSIONS=$(grep -o 'github.com/open-telemetry/opentelemetry-collector-contrib[^ ]* v[0-9.]\+' pkg/extension/opampextension/go.mod \             
-  | awk '{print $2}' \
-  | sed 's/^v//' \
-  | sort -u)
+TO_VERSIONS=$(grep -o 'github.com/open-telemetry/opentelemetry-collector-contrib[^ ]* v[0-9.]\+' pkg/extension/opampextension/go.mod | awk '{print $2}' | sed 's/^v//' | sort -u)
 TO_VERSION_COUNT=$(echo "$versions" | wc -l)
 if [[ "$TO_VERSION_COUNT" -gt 1 ]]; then
   echo "Error: Multiple versions found: $TO_VERSIONS"
@@ -32,10 +29,7 @@ fi
 if [[ -n "$FROM_VERSION_FIXED" ]]; then
   FROM_VERSIONS="$FROM_VERSION_FIXED"
 else
-  FROM_VERSIONS=$(grep -ho 'tree/v[0-9.]\+' docs/configuration.md \
-    | sed 's/tree\/v//' \
-    | sort -u \
-    | tr '\n' ' ')
+  FROM_VERSIONS=$(grep -ho 'tree/v[0-9.]\+' docs/configuration.md | sed 's/tree\/v//' | sort -u | tr '\n' ' ')
 fi
 TO_VER=${TO_VERSIONS[0]}
 echo "Initial versions: $FROM_VERSIONS, changing to: $TO_VER."
@@ -62,4 +56,3 @@ for FROM_VER in $FROM_VERSIONS; do
         docs/performance.md \
         pkg/receiver/telegrafreceiver/README.md
 done
-
