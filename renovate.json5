@@ -7,16 +7,16 @@
   "commitMessageExtra": "{{depName}} from {{currentValue}} to {{newValue}}",
   "packageRules": [
     {
-      "matchPackageNames": ["/.*/"],
-      "enabled": false
-    },
-    {
       "matchPackageNames": [
         "^go.opentelemetry.io/collector.*",
         "^github.com/open-telemetry/opentelemetry-collector-contrib.*"
       ],
       "groupName": "opentelemetry-collector",
       "enabled": true
+    },
+    {
+      "matchPackageNames": ["/.*/"],
+      "enabled": false
     }
   ]
 }
