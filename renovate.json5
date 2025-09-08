@@ -12,8 +12,8 @@
     },
     {
       "matchPackageNames": [
-        "^go.opentelemetry.io/collector/.*",
-        "^github.com/open-telemetry/opentelemetry-collector-contrib/.*"
+        "^go.opentelemetry.io/collector//.*",
+        "^github.com/open-telemetry/opentelemetry-collector-contrib//.*"
       ],
       "groupName": "opentelemetry-collector",
       "enabled": true
