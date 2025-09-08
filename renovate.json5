@@ -11,7 +11,7 @@
       "enabled": false
     },
     {
-      "matchPackageNames": [
+      "matchPackagePatterns": [
         "^go\\.opentelemetry\\.io/collector.*$",
         "^github\\.com/open-telemetry/opentelemetry-collector-contrib.*$"
       ],
